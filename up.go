@@ -1,8 +1,14 @@
 package up
 
-func Grouping(st string) (s string) {
+// Grouping inserts the "_" separator between every 3 chars e.g.:
+// "-1234567" returns "-1_234_567"
+func Grouping(st string) string {
+	if st == "" {
+		return st
+	}
+	sign, s := "", ""
 	if st[0] == '-' {
-		return "-" + Grouping(st[1:])
+		sign, st = "-", st[1:]
 	}
 	rs := []rune(st)
 	for i := range rs {
@@ -11,5 +17,5 @@ func Grouping(st string) (s string) {
 		}
 		s = string(rs[len(rs)-1-i]) + s
 	}
-	return
+	return sign + s
 }
