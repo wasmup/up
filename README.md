@@ -1,5 +1,15 @@
 # up
 
+## Fast update from remote GitHub
+```sh
+go clean -modcache
+rm go.sum
+# delect require line inside `go.mod` file
+export GOPROXY=direct
+go mod tidy -v
+go run .
+```
+
 Make your code **clear and simple** to understand, **optimize when needed**.  
 
 "The real problem-solving begins when you already have a solution that runs in O(N) time and space complexity, but it still isn't fast enough." - by Matthew
