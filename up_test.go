@@ -12,3 +12,21 @@ func TestGrouping(t *testing.T) {
 		}
 	}
 }
+
+func TestAbs(t *testing.T) {
+	if Abs(-2) != 2 || Abs(2) != 2 {
+		t.Error("Abs")
+	}
+}
+
+func TestMin(t *testing.T) {
+	if Min(5, 2) != 2 || Min(2, 5) != 2 {
+		t.Error("Min")
+	}
+}
+
+func TestMax(t *testing.T) {
+	if Max(5, 2) != 5 || Max(2, 5) != 5 {
+		t.Error("Max")
+	}
+}

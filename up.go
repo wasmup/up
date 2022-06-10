@@ -19,3 +19,33 @@ func Grouping(st string) string {
 	}
 	return sign + s
 }
+
+func Abs[T Number](v T) T {
+	if v < 0 {
+		v = -v
+	}
+	return v
+}
+
+func Min[T Number](a, b T) T {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+func Max[T Number](a, b T) T {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+type Number interface {
+	~int | ~int8 | ~int16 | ~int32 | ~int64 |
+		~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~uintptr |
+		// byte | // alias for uint8
+		// rune | // alias for int32 // represents a Unicode code point
+		~float32 | ~float64
+	//  ~complex64 | ~complex128
+}
